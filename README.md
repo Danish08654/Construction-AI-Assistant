@@ -110,7 +110,9 @@ Deployment with Docker & Kubernetes
 Developed by Danish Zulfiqar
 
 AI Engineer
+
 Machine Learning Developer
+
 Generative AI Builder
 
 ---
