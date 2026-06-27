@@ -1,6 +1,5 @@
 # Construction AI Assistant
 
-An AI-powered Construction Assistant built with Streamlit, FastAPI, LangChain, ChromaDB, and RAG.
 The application helps engineers, architects, contractors, and construction professionals quickly retrieve information from building codes
 regulations, construction standards, and technical documents using natural language.
 
