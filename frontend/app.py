@@ -683,7 +683,6 @@ with tab5:
         st.markdown("### 🔧 System Status")
         
         status_info = {
-            "API Status": "🟢 Online" if health["status"] == "online" else "🔴 Offline",
             "RAG Ready": "✅ Yes" if health["rag_ready"] else "❌ No",
             "Mode": "📡 Live" if not st.session_state.demo_mode else "📊 Demo",
             "API URL": API_URL,
