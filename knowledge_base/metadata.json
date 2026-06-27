@@ -1,0 +1,57 @@
+[
+  {
+    "title": "IBC 2021 \u2014 Occupancy Classifications",
+    "category": "building_codes",
+    "chunks": 4
+  },
+  {
+    "title": "IBC 2021 \u2014 Fire Resistance and Construction Types",
+    "category": "building_codes",
+    "chunks": 3
+  },
+  {
+    "title": "Residential Building Permits \u2014 Requirements and Process",
+    "category": "permits",
+    "chunks": 4
+  },
+  {
+    "title": "Foundation Systems \u2014 Types, Selection, and Requirements",
+    "category": "structural",
+    "chunks": 4
+  },
+  {
+    "title": "Concrete Mix Design and Specifications",
+    "category": "materials",
+    "chunks": 4
+  },
+  {
+    "title": "Steel Framing \u2014 Structural Steel Specifications",
+    "category": "materials",
+    "chunks": 3
+  },
+  {
+    "title": "Electrical \u2014 NEC 2023 Residential Requirements",
+    "category": "electrical",
+    "chunks": 4
+  },
+  {
+    "title": "Plumbing \u2014 Residential Code Requirements",
+    "category": "plumbing",
+    "chunks": 3
+  },
+  {
+    "title": "Construction Cost Estimation Guide",
+    "category": "cost_estimation",
+    "chunks": 4
+  },
+  {
+    "title": "HVAC Systems \u2014 Selection and Sizing",
+    "category": "mechanical",
+    "chunks": 4
+  },
+  {
+    "title": "Accessibility \u2014 ADA and Fair Housing Requirements",
+    "category": "accessibility",
+    "chunks": 4
+  }
+]
