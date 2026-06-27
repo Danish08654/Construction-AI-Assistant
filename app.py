@@ -1,7 +1,5 @@
 import streamlit as st
-import requests
 
-API_URL = "http://localhost:8000"
 
 st.set_page_config(
     page_title="Construction AI Assistant",
@@ -17,20 +15,6 @@ st.title("🏗️ Construction AI Assistant")
 if "question" not in st.session_state:
     st.session_state.question = ""
 
-# ======================================================
-# HEALTH CHECK
-# ======================================================
-try:
-    health = requests.get(f"{API_URL}/health", timeout=3).json()
-    if health.get("rag_ready"):
-        st.success("✅ Knowledge base loaded — ready to answer")
-    else:
-        st.warning("⚠️ RAG not ready — check API terminal")
-except Exception:
-    st.error("⚠️ API not running. Start: uvicorn api.main:app --reload")
-    st.stop()
-
-st.divider()
 
 tab1, tab2, tab3 = st.tabs([
     "💬 Ask the Assistant",
