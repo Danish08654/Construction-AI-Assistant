@@ -10,13 +10,10 @@ import time
 # PAGE CONFIGURATION
 # ============================================================
 st.set_page_config(
-    page_title="🏗️ Construction AI Assistant",
+    page_title=" Construction AI Assistant",
     page_icon="🏗️",
     layout="wide",
     initial_sidebar_state="expanded",
-    menu_items={
-        "About": "Construction AI Assistant powered by RAG • Built with Streamlit"
-    }
 )
 
 # ============================================================
@@ -180,10 +177,7 @@ st.markdown("""
 # CONFIGURATION & CONSTANTS
 # ============================================================
 
-# Get API URL from Streamlit Secrets or environment
-API_URL = st.secrets.get("API_URL", os.getenv("API_URL", "http://localhost:8000"))
 
-# Mock data for demo mode (when API is not available)
 MOCK_ANSWER = {
     "answer": """### Foundation Requirements
 
@@ -279,50 +273,6 @@ if "question" not in st.session_state:
 
 if "demo_mode" not in st.session_state:
     st.session_state.demo_mode = False
-
-# ============================================================
-# UTILITY FUNCTIONS
-# ============================================================
-
-def check_api_health() -> Dict:
-    """Check if API is running and RAG is ready."""
-    try:
-        response = requests.get(f"{API_URL}/health", timeout=3)
-        data = response.json()
-        return {
-            "status": "online",
-            "rag_ready": data.get("rag_ready", False),
-            "message": "✅ Knowledge base loaded — ready to answer"
-        }
-    except requests.exceptions.ConnectionError:
-        return {
-            "status": "offline",
-            "rag_ready": False,
-            "message": "⚠️ API offline — Demo mode enabled (using sample data)"
-        }
-    except Exception as e:
-        return {
-            "status": "error",
-            "rag_ready": False,
-            "message": f"⚠️ Error checking API: {str(e)}"
-        }
-
-def query_api(question: str, category: str = None) -> Dict:
-    """Query the API for an answer."""
-    try:
-        payload = {"question": question}
-        if category and category != "Any / General":
-            payload["category"] = category
-        
-        response = requests.post(
-            f"{API_URL}/query",
-            json=payload,
-            timeout=30
-        )
-        response.raise_for_status()
-        return response.json()
-    except Exception as e:
-        return None
 
 def search_knowledge_base(query: str, k: int = 5) -> Dict:
     """Search the knowledge base directly."""
@@ -772,61 +722,3 @@ with tab5:
             st.write(f"**{key}:** {value}")
     
     st.divider()
-    
-    st.markdown("### 📋 About This Assistant")
-    st.markdown("""
-    **Construction AI Assistant v1.0**
-    
-    A knowledge-based AI system trained on:
-    - 🏛️ International Building Code (IBC 2021)
-    - ⚡ National Electrical Code (NEC)
-    - 🚰 Uniform Plumbing Code (UPC)
-    - ♿ ADA Accessibility Guidelines
-    - 🏗️ Structural Engineering Standards
-    - 💰 Construction Cost Estimation
-    
-    **Features:**
-    - ✅ RAG-powered question answering
-    - ✅ Knowledge base search
-    - ✅ Conversation history
-    - ✅ Quick reference guide
-    - ✅ Conversation export
-    - ✅ Demo mode (when API offline)
-    
-    **Deployment:**
-    - Built with Streamlit
-    - Backend: FastAPI + Langchain
-    - Vectorized with Chroma
-    - Embeddings: OpenAI / Hugging Face
-    
-    **Disclaimer:**
-    *This assistant provides information for reference purposes only. 
-    Always consult local building codes and licensed professionals 
-    for critical construction decisions.*
-    """)
-    
-    st.divider()
-    
-    st.markdown("### 🔐 Privacy & Data")
-    
-    privacy_expander = st.expander("📖 Read Privacy Information")
-    with privacy_expander:
-        st.markdown("""
-        - Your questions may be logged for improvement
-        - No personal data is collected
-        - Conversation history is stored locally in your session
-        - History is cleared when you close this browser
-        - Download your history to preserve it
-        """)
-
-# ============================================================
-# FOOTER
-# ============================================================
-
-st.divider()
-st.markdown("""
-<div style="text-align: center; color: #666; padding: 2rem; font-size: 0.9rem;">
-    <p>🏗️ Construction AI Assistant | Built with ❤️ for the construction industry</p>
-    <p>Last Updated: June 2026 | <a href="#">Documentation</a> • <a href="#">Issues</a> • <a href="#">Feedback</a></p>
-</div>
-""", unsafe_allow_html=True)
