@@ -41,18 +41,31 @@ regulations, construction standards, and technical documents using natural langu
 
 -----
 
-Demo
+# Demo:
+
 Ask Construction Questions
+
 Building Codes
+
 Fire Safety
+
 Structural Design
+
 Concrete Specifications
+
 Foundation Design
+
 HVAC
+
 Electrical
+
 Plumbing
+
 ADA Compliance
+
 Cost Estimation
+
+----
 
 # Example Questions
 
