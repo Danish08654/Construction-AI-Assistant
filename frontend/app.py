@@ -355,22 +355,6 @@ st.markdown("""
     </div>
 """, unsafe_allow_html=True)
 
-# ============================================================
-# HEALTH CHECK & STATUS
-# ============================================================
-
-health = check_api_health()
-st.session_state.api_status = health
-
-if health["status"] == "online" and health["rag_ready"]:
-    st.success(health["message"])
-elif health["status"] == "offline":
-    st.warning(health["message"])
-    st.session_state.demo_mode = True
-else:
-    st.error(health["message"])
-    st.session_state.demo_mode = True
-
 st.divider()
 
 # ============================================================
