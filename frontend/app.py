@@ -682,12 +682,6 @@ with tab5:
     with col_set_1:
         st.markdown("### 🔧 System Status")
         
-        status_info = {
-            "RAG Ready": "✅ Yes" if health["rag_ready"] else "❌ No",
-            "Mode": "📡 Live" if not st.session_state.demo_mode else "📊 Demo",
-            "API URL": API_URL,
-        }
-        
         for key, value in status_info.items():
             st.write(f"**{key}:** {value}")
     
