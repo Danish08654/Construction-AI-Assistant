@@ -104,7 +104,6 @@ Provide a thorough, accurate, professional answer. Return ONLY valid JSON, no ma
 
 # ── header ──
 st.markdown("## 🏗️ Construction AI Assistant")
-st.caption("IBC · NEC · UPC · ADA · Structural · Cost Estimation — powered by Groq")
 st.divider()
 
 tab1, tab2, tab3 = st.tabs(["💬 Ask the Assistant", "📋 Quick Reference", "ℹ️ About"])
@@ -270,7 +269,6 @@ This AI assistant covers the full scope of US construction knowledge:
 | Fire Safety | NFPA 13, IFC 2021 |
 | Cost Data | RSMeans 2025 |
 
-**Powered by** Groq (Llama 3.3 70B) for ultra-fast inference.
 
-> ⚠️ This assistant provides general guidance based on model codes. Always verify requirements with your local Authority Having Jurisdiction (AHJ) before starting any construction project.
+>  This assistant provides general guidance based on model codes. Always verify requirements with your local Authority Having Jurisdiction before starting any construction project.
 """)
