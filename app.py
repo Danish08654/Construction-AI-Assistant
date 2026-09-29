@@ -92,7 +92,7 @@ Provide a thorough, accurate, professional answer. Return ONLY valid JSON, no ma
 }}"""
 
     raw = client.chat.completions.create(
-        model="qwen/qwen3.6-27b",
+        model="openai/gpt-oss-20b",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.2, max_tokens=1500
     ).choices[0].message.content.strip()
